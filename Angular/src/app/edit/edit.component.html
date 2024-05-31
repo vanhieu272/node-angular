@@ -1,0 +1,21 @@
+
+<div class="form-create">
+  <h1 class="text-center mt-5">EDIT {{stname}}'s INFORMATION </h1>
+  <form style="margin: 0 25%">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input [(ngModel)]="stname" [ngModelOptions]="{standalone: true}"  type="text" class="form-control" id="name" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="course" class="form-label">Course</label>
+      <input [(ngModel)]="course" [ngModelOptions]="{standalone: true}"  type="text" class="form-control" id="course" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="fee" class="form-label">Fee</label>
+      <input [(ngModel)]="fee" [ngModelOptions]="{standalone: true}"  type="text" class="form-control" id="fee" aria-describedby="emailHelp">
+    </div>
+    <a routerLink="/"><button type="button" class="btn btn-secondary me-2 btn-create-page">Back</button></a>
+    <button type="button" class="btn btn-primary btn-create-page" (click)="updateStudent()">Submit</button>
+  </form>
+</div>
+

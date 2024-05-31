@@ -1,0 +1,40 @@
+
+<div class="container mt-4">
+  <h1>Student Table</h1>
+  <a routerLink="/create-student">
+    <button class="btn btn-primary">Add new student</button>
+  </a>
+  <table class="table">
+    <thead>
+    <h1 *ngIf="!isResultLoaded">Loading.................</h1>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Student Name</th>
+      <th scope="col">Course</th>
+      <th scope="col">Fee</th>
+      <th scope="col" colspan="3" class="text-center">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let StudentItem of StudentArray, let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{StudentItem.stname }}</td>
+      <td>{{StudentItem.course }}</td>
+      <td>{{StudentItem.fee }}</td>
+      <td class="btn-col"><a [routerLink]="['/detail/', StudentItem._id]" routerLinkActive="active">
+        <button class="btn btn-success action-btn">DETAIL</button>
+      </a>
+      </td>
+      <td class="btn-col">
+        <a [routerLink]="['/edit-student/', StudentItem._id]" routerLinkActive="active">
+          <button class="btn btn-warning action-btn">EDIT</button>
+        </a>
+      </td>
+      <td class="btn-col">
+        <button type="button" class="btn btn-danger action-btn" (click)="setDelete(StudentItem)">DELETE</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
